@@ -1,0 +1,56 @@
+{
+  "name": "desafio03",
+  "version": "1.0.0",
+  "description": "Desafio da semana  3 do módulo 6.",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "jest",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "dev": "ts-node-dev --ignore-watch node_modules src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiagoDalto/desafio03.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThiagoDalto/desafio03/issues"
+  },
+  "homepage": "https://github.com/ThiagoDalto/desafio03#readme",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/pg": "^8.6.5",
+    "@types/uuid": "^8.3.4",
+    "bcrypt": "^5.1.0",
+    "class-transformer": "^0.5.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.8.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.6",
+    "typescript": "^4.9.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.16",
+    "@types/jest": "^28.1.4",
+    "@types/node": "^18.11.18",
+    "@types/supertest": "^2.0.12",
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.20",
+    "sqlite3": "^5.0.8",
+    "sucrase": "^3.29.0",
+    "supertest": "^6.2.4",
+    "ts-jest": "^28.0.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4"
+  }
+}
