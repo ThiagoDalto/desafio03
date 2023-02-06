@@ -1,13 +1,22 @@
 import AppDataSource from "../../data-source";
 import { Clientes } from "../../entities/clientes.entity";
+import { Request } from "express";
+import { ICliente } from "../../interfaces/clientes";
+import { AppError } from "../../errors/appError";
 
-
-const clienteListService = async (): Promise<Clientes[]> => {
+const clienteListService = async (id: string): Promise<Clientes> => {
     const clienteRepository = AppDataSource.getRepository(Clientes);
+    
 
-    const clientes = await clienteRepository.find();
+    const cliente = await clienteRepository.findOneBy({id});
 
-    return clientes;
+    if(!cliente){
+        throw new AppError("Cliente not found")
+    }
+    let clienteResponse = {...cliente}
+    
+
+    return  cliente;
 }
 
 export default clienteListService;

@@ -4,6 +4,8 @@ import contatosCreateService from "../../services/contatos/contatosCreate.servic
 
 const contatosCreateController = async (req: Request, res: Response) => {
     const contato: IContatosRequest = req.body;
+    const clienteId: string = req.cliente.id
+    contato.clienteId = clienteId
 
     const createdContato = await contatosCreateService(contato);
 

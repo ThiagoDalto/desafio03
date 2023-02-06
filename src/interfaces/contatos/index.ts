@@ -2,7 +2,7 @@ export interface IContatosRequest {
     name: string;
     email: string;
     phone: string;
-
+    clienteId: string;
 }
 
 export interface IContatos {

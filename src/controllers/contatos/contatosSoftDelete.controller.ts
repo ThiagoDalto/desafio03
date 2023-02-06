@@ -7,6 +7,7 @@ import contatoSoftDeleteService from "../../services/contatos/contatosSoftDelete
 const contatoSoftDeleteController = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
+    
     await contatoSoftDeleteService(id);
 
     return res.status(204).send();

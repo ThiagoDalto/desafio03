@@ -2,7 +2,7 @@ export interface IClienteRequest {
     name: string;
     email: string;
     password: string;
-    phone: string;
+    phone: string
 
 }
 
@@ -12,6 +12,7 @@ export interface ICliente {
     password: string;
     phone: string;
     createdAt: Date;
+    contato?: string[];
 }
 
 export interface IClienteLogin {
@@ -24,4 +25,4 @@ export interface IClienteUpdate {
     email?: string;
     phone?: string;
     password?: string;
-  }
+}

@@ -36,7 +36,7 @@ export class Clientes {
   @Column("boolean", { default: true })
   isActive: boolean = true;
   
-  @OneToMany(() => Contatos, (contato) => contato.cliente)
+  @OneToMany(() => Contatos, (contato) => contato.cliente, { eager: true })
   contato: Contatos[]
 
 }

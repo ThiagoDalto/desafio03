@@ -23,10 +23,7 @@ const contatoSoftDeleteService = async (id: string
  
  
 
-  await contatoRepository.update(id, {
-    isActive: false,
-   
-  });
+  await contatoRepository.delete(id);
 
  
 };

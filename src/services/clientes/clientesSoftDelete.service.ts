@@ -20,10 +20,7 @@ const clienteSoftDeleteService = async (id: string
   
  
 
-  await clienteRepository.update(id, {
-    isActive: false,
-   
-  });
+  await clienteRepository.delete(id);
 
  
 };

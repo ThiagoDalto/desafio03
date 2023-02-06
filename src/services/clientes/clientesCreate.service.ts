@@ -13,11 +13,11 @@ const clienteCreateService = async ({name, email, phone, password,}: IClienteReq
     const emailAlreadyExists = clientes.find((cliente) => cliente.email === email);
 
     if(emailAlreadyExists) {
-        throw new AppError("Email already exists");
+        throw new AppError("Email already exists", 403);
     }
 
     if (!password) {
-        throw new AppError("Password is missing");
+        throw new AppError("Password is missing", 403);
     }
 
     const hashedPassword = await hash(password, 10);

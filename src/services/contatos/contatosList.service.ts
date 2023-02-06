@@ -5,7 +5,7 @@ import { Contatos } from "../../entities/contatos.entity";
 const  contatosListService = async (): Promise<Contatos[]> => { 
     const contatoRepository = AppDataSource.getRepository(Contatos);
 
-    const contatos = await contatoRepository.find();
+    const contatos = await contatoRepository.find({where: {isActive: true}});
 
     return contatos;
 }

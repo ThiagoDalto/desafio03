@@ -4,7 +4,8 @@ import { Request, Response } from "express";
 import clienteListService from "../../services/clientes/clientesList.service";
 
 const clienteListController = async (req: Request, res: Response) => {
-    const clientes = await clienteListService();
+    const id = req.cliente.id
+    const clientes = await clienteListService(id);
 
     return res.json(instanceToPlain(clientes));
 }
