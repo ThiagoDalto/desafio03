@@ -106,7 +106,7 @@ export const RegisterForm = styled.div`
     width: 80vw;
     height: 103%;
     position: relative;
-    max-height: 57.750rem;
+    max-height: 38.75rem;
    
     
 
@@ -119,9 +119,9 @@ export const RegisterForm = styled.div`
   
  
   .cadastrar {
-    width: 80%;
+    width: 60%;
 
-    height: 5%;
+    height: 10%;
     background-color: var(--Color-primary-Negative);
     border: 0.076rem solid var(--Color-primary-Negative);
     border-radius: 0.254rem;
@@ -131,7 +131,7 @@ export const RegisterForm = styled.div`
     font-size: 150%;
     opacity: 0.7;
     position: absolute;
-    top: 92%;
+    top: 85%;
 
 
   }
