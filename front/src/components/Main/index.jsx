@@ -16,7 +16,7 @@ function Main() {
     return(
         <Principal>
             <div className='suporteContainer'>
-                <h2>Tecnologias</h2>
+                <h2>Contatos</h2>
                 <button className='addBtn' onClick={showModal}><MdAdd/></button>
             </div>
             <ContainerContatos/> {

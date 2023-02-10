@@ -1,18 +1,22 @@
-
+import { useContext } from "react";
 import { useEffect, useState } from "react";
+import { ClienteContext } from "../../contexts/ClienteContext";
 import api from '../../services/api'
+import BotaoCliente from "../BotaoCliente";
+import ClienteUpdate from "../ClienteUpdate";
 import { Header1, Header2 } from './HeaderStyle'
 
 
 
 function Header(){
-    const [users, setUsers] = useState([]);
+    const [cliente, setCliente] = useState([]);
+    const {  isModalOn, setIsModalOn } = useContext(ClienteContext)
     
     useEffect(() => {
-        const userId = localStorage.getItem('@USERID')
+        const clienteID = localStorage.getItem('@CLIENTEID')
         api
-        .get(`/users/${userId}`)
-        .then((response) => setUsers(response.data))
+        .get(`/clientes`)
+        .then((response) => setCliente(response.data))
         .catch((err) => console.log(err))
       }, [])
       
@@ -22,12 +26,19 @@ function Header(){
             <Header2>
                 
                       
-                        <h3>Olá, {users.name}</h3>
-                        <p>{users.course_module}</p>
+                        <span>
+                          <h3>Olá, {cliente.name}</h3>
+                          <span>
+                            <p>{cliente.email}</p>
+                            <p>{cliente.phone}</p>
+                          </span>
+                        </span>
+                        <BotaoCliente/>
+                        
                        
                     
             </Header2>
-
+              {isModalOn && <ClienteUpdate/>}
             
         </Header1>
         

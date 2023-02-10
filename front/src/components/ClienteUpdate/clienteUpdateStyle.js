@@ -15,7 +15,7 @@ export const ContainerForm = styled.div`
     border-radius: 4px;
     width: 80%;
     max-width: 31.250rem;
-    height: 50%;
+    height: 75%;
     
     border: 0 solid var(--color-Grey-3);
     background-color: var(--color-Grey-3);
@@ -84,7 +84,7 @@ export const FormTech = styled.form`
     width: 80%;
     gap: 1rem;
     
-    height: 15%;
+    height: 12%;
 
     border-radius: 0.254rem;
     color: #fff;
@@ -93,14 +93,14 @@ export const FormTech = styled.form`
     font-size: 80%;
     opacity: 0.7;
     position: absolute;
-    top: 10%;
+    top: 4%;
         
     }
     .formData2{
     width: 80%;
     gap: 1rem;
     
-    height: 15%;
+    height: 12%;
     max-height: fit-content;
 
     border-radius: 0.254rem;
@@ -110,14 +110,31 @@ export const FormTech = styled.form`
     font-size: 80%;
     opacity: 0.7;
     position: absolute;
-    top: 35%;
+    top: 22%;
         
     }
     .formData3{
     width: 80%;
     gap: 1rem;
     
-    height: 15%;
+    height: 12%;
+    max-height: fit-content;
+
+    border-radius: 0.254rem;
+    color: #fff;
+    font-weight: 500;
+    padding: 0%;
+    font-size: 80%;
+    opacity: 0.7;
+    position: absolute;
+    top: 40%;
+        
+    }
+    .formData4{
+    width: 80%;
+    gap: 1rem;
+    
+    height: 12%;
     max-height: fit-content;
 
     border-radius: 0.254rem;
@@ -180,11 +197,11 @@ export const FormTech = styled.form`
   }
 
     .submitBtn{
-    width: 80%;
+    width: 40%;
     
     background-color: var(--Color-primary);
     border: 0.076rem solid var(--Color-primary);
-    height: 15%;
+    height: 10%;
 
     border-radius: 0.254rem;
     color: #fff;
@@ -193,6 +210,35 @@ export const FormTech = styled.form`
     font-size: 150%;
     opacity: 0.7;
     position: absolute;
-    top: 90%;
+    top: 82%;
+    }
+
+    .deleteBTN{
+    width: 40%;
+    
+    background-color: crimson;
+    border: 0.076rem solid crimson;
+    height: 10%;
+
+    border-radius: 0.254rem;
+    color: #fff;
+    font-weight: 500;
+    padding: 0%;
+    font-size: 150%;
+    opacity: 0.7;
+    position: absolute;
+    top: 98%;
+    }
+
+    .infoUpdate{
+        position: absolute;
+        top: 1%;
+        color: #fff;
+    }
+
+    .infoDelete{
+        position: absolute;
+        top: 109%;
+        color: #fff;
     }
 `;

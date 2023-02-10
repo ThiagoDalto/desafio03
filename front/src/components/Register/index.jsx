@@ -7,6 +7,7 @@ import  { formSchema } from '../../validators/RegisterCliente'
 import BotaoBack from '../BotaoBack'
 import { RegisContext } from '../../contexts/RegisterContext'
 import {useContext} from 'react'
+import BotaoCliente from "../BotaoCliente";
 
 function Register() {
 

@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import "express-async-errors";
 import express from "express";
+import cors from "cors";
 import clienteRoutes from "./router/cliente/routes";
 import sessionRoute from "./router/session/routes";
 import contatoRoutes from "./router/contatos/routes";
@@ -9,6 +10,8 @@ import handleErrorMiddleware from "./middlewares/handleError.middleware";
 
 
 const app = express();
+
+app.use(cors())
 
 
 app.use(express.json());

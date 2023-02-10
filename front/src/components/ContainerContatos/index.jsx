@@ -1,24 +1,41 @@
 import { useContext } from "react";
 import { ContatosContext } from "../../contexts/ClienteContatos";
-import {  MdOutlineDeleteSweep } from 'react-icons/md';
+import {  MdOutlineDeleteSweep, MdOutlineSync } from 'react-icons/md';
 import { ContatoCard, Ul } from "./ContainerStyle"
+import ContatoUpdate from "../ContatoUpdate";
 
 
 
 function ContainerContatos() {
-    const { contatos, removeContato, deleteContato} = useContext(ContatosContext)
+    const { prop, setProp, contatos, deleteContato, isModalUpdateOn, setIsModalUpdateOn} = useContext(ContatosContext);
+    
+
+    function showModal(id){
+        setIsModalUpdateOn(true)
+        propId(id)
+    }
+
+    function propId(id){
+        setProp(id)
+    }
+
    
 return(
+    <>
     <Ul>
         {
-            !contatos.length > 0 ? (
-                <p >Insira novos contatos</p>
+            !contatos ? (
+                <p >Cadastre já seus contatos!!</p>
             ) : (
                 contatos.map(contato => (
                     <ContatoCard  key={contato.id}  >
-                        <span className="ContatoName">{contato.title}</span> <span className="suporteContatoStatus">
-                            <span className="ContatoStatus">{contato.status}</span>
+                        <span className="ContatoName">{contato.name}</span> 
+                        <span className="ContatoStatus">{contato.email}</span>
+                        <span className="ContatoStatus">{contato.phone}</span>
+                        <span className="suporteContatoStatus">
+                            
                             <button className="removeBtn" onClick={() => deleteContato(contato.id)} ><MdOutlineDeleteSweep/></button>
+                            <button className="removeBtn" onClick={() => showModal(contato.id)} ><MdOutlineSync/></button>
                         </span>
                     </ContatoCard>
                 ))
@@ -26,6 +43,10 @@ return(
         }
 
     </Ul>
+ 
+    {      isModalUpdateOn && <ContatoUpdate/>
+    }
+    </>
 )
 }
 

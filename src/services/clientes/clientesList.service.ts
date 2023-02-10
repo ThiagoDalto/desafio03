@@ -4,7 +4,7 @@ import { Request } from "express";
 import { ICliente } from "../../interfaces/clientes";
 import { AppError } from "../../errors/appError";
 
-const clienteListService = async (id: string): Promise<Clientes> => {
+const clienteListService = async (id: string): Promise<Object> => {
     const clienteRepository = AppDataSource.getRepository(Clientes);
     
 
@@ -13,10 +13,17 @@ const clienteListService = async (id: string): Promise<Clientes> => {
     if(!cliente){
         throw new AppError("Cliente not found")
     }
-    let clienteResponse = {...cliente}
-    
+    const clienteResponse = {
+        id : cliente.id,
+        name : cliente.name,
+        email : cliente.email,
+        phone : cliente.phone,
+        isActive : cliente.isActive,
+        createdAt : cliente.createdAt,
+    }
+    console.log(clienteResponse)
 
-    return  cliente;
+    return  clienteResponse;
 }
 
 export default clienteListService;

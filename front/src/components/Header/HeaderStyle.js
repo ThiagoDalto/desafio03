@@ -21,11 +21,13 @@ export const Header2 = styled.header`
     h3{
         color: var(--color-Grey-0);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     }
 
     p{
         color: var(--color-Grey-2);
+        font-size: 1.5rem;
+        font-weight: 700;
     }
 
 

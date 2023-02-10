@@ -2,12 +2,7 @@ import app from "./app";
 import AppDataSource from "./data-source";
 import "dotenv/config";
 
-const express = require("express")
 
-const cors = require("cors")
-app.use(cors({
-    origin: "*",
-}));
 
 (async () => {
     await AppDataSource.initialize().catch((err) => {

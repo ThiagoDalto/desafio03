@@ -5,8 +5,8 @@ import clienteLoginCreateService from "../../services/session/clienteLogin.servi
 const clienteLoginCreateController = async (req: Request, res: Response) => {
     try{
         const data: IClienteLogin = req.body;
-        const token = await clienteLoginCreateService(data);
-        return res.json({ token });
+        
+        return res.json(await clienteLoginCreateService(data));
     } catch (error) {
         if (error instanceof Error) {
             return res.status(403).json({

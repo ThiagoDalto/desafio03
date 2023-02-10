@@ -3,37 +3,39 @@ import { ContatosContext } from "../../contexts/ClienteContatos";
 import { MdClear} from 'react-icons/md';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { contatoSchema } from "../../validators/RegisterCliente";
-import { ContainerForm, SuporteContainer, FormTech, ModalAdd } from "./newContatos";
+import { contatoUpdateSchema } from "../../validators/RegisterCliente";
+import { ContainerForm, SuporteContainer, FormTech, ModalAdd } from "./updateContatoStyle";
 
 
 
-function NewContatoForm() {
+function ContatoUpdate() {
    
-    const {  setIsModalOn, onSubmitFunction } = useContext(ContatosContext);
+    const { prop, isModalUpdateOn, setIsModalUpdateOn, onSubmitFunctionUpdate } = useContext(ContatosContext);
             
         const {
            register,
            handleSubmit,
            formState: { errors },
          } = useForm({
-           resolver: yupResolver(contatoSchema),
+           resolver: yupResolver(contatoUpdateSchema),
 
          });
 
          function closeModal(){
-            setIsModalOn(false)
+            setIsModalUpdateOn(false)
          }
+
+         
 
     return (
         <ModalAdd>
         <ContainerForm className="modalCadastro">
             <SuporteContainer className="headerForm">
-                <h2 className="modalTitle">Cadastrar Contato</h2>
+                <h2 className="modalTitle">Atualizar Contato</h2>
                 <button className="closeBtn" onClick={closeModal} ><MdClear/></button>
                 
             </SuporteContainer>
-            <FormTech onSubmit={handleSubmit(onSubmitFunction)}>
+            <FormTech onSubmit={handleSubmit(onSubmitFunctionUpdate)}>
                 <div className="formData1">
                     <label htmlFor="name">Nome</label>
                     <input
@@ -67,11 +69,11 @@ function NewContatoForm() {
                       />
                 <p className="errorMsg">{errors.phone?.message}</p>
                 </div>
-                <button className="submitBtn" type="submit" >Cadastrar Contatos</button>
+                <button className="submitBtn" type="submit" >Atualizar</button>
             </FormTech>
         </ContainerForm>
         </ModalAdd>
     )
 }
 
-export default NewContatoForm;
+export default ContatoUpdate;

@@ -32,9 +32,7 @@ export const schema = yup.object().shape({
         }),
       phone: yup.string().required("Campo obrigatório").matches(
         /^[0-9]+$/,
-        "Telefone deve conter no máximo 11 digitos numéricos"),
-      contact: yup.string().required("Contato obrigatório"),
-      course_module: yup.string().required("Selecione um módulo"),
+        "Telefone deve conter no máximo 11 digitos numéricos")
     });
 
 
@@ -44,5 +42,28 @@ export const schema = yup.object().shape({
       phone: yup.string().required("Campo obrigatório").matches(
         /^[0-9]+$/,
         "Telefone deve conter no máximo 11 digitos numéricos"),
+
+    })
+    export const contatoUpdateSchema = yup.object().shape({
+      name: yup.string().notRequired(),
+      email: yup.string().email("Email inválido").notRequired(),
+      phone: yup.string().matches(
+        /^[0-9]+$/, { excludeEmptyString: true },
+        "Telefone deve conter no máximo 11 digitos numéricos").nullable().notRequired(),
+
+    })
+
+    export const clienteUpdateSchema = yup.object().shape({
+      name: yup.string().notRequired(),
+      email: yup.string().email("Email inválido").notRequired(),
+      password: yup
+        .string()
+        .matches(
+          /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/, { excludeEmptyString: true },
+          "Senha com no mínimo 8 caracteres. Necessário ter letras, números e ao menos um símbolo"
+        ).notRequired(),
+      phone: yup.string().matches(
+        /^[0-9]+$/, { excludeEmptyString: true },
+        "Telefone deve conter no máximo 11 digitos numéricos").notRequired(),
 
     })

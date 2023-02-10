@@ -28,7 +28,7 @@ export class Contatos {
     @Column("boolean", { default: true })
   isActive: boolean = true;
 
-  @ManyToOne(() => Clientes, (cliente) => cliente.contato)
+  @ManyToOne(() => Clientes, (cliente) => cliente.contato, {onDelete: 'CASCADE'})
     cliente: Clientes
 
 }

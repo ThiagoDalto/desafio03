@@ -8,6 +8,7 @@ const contatosCreateController = async (req: Request, res: Response) => {
     contato.clienteId = clienteId
 
     const createdContato = await contatosCreateService(contato);
+    console.log(contato)
 
     return res.status(201).json(createdContato);
 }

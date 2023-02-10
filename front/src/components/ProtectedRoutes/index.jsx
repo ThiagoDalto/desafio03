@@ -5,7 +5,7 @@ import { ClienteContext } from '../../contexts/ClienteContext';
 function ProtectedRoutes() {
     const { cliente, loading } = useContext(ClienteContext);
     const location = useLocation();
-
+   
     if(loading){
         return <div>Carregando...</div>
     }

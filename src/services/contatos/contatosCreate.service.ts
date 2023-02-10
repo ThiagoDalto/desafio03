@@ -41,7 +41,8 @@ const contatosCreateService = async ({
     const contato = contatosRepository.create({
         name,
         email,
-        phone,        
+        phone,
+        cliente       
     });
 
    
