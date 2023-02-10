@@ -58,4 +58,10 @@ export const ContatoCard = styled.li`
             
         }
     }
+
+    @media (max-width: 642px) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
 `;
